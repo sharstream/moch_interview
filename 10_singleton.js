@@ -1,5 +1,5 @@
 //Singleton design pattern in Javascript
-// using self-container function
+// using self-invoking function
 var Singleton = (function () {
   var instance;
 
@@ -24,3 +24,5 @@ function run() {
 
   console.log('Same instance? ' + (instance1 === instance2));
 }
+
+run();
