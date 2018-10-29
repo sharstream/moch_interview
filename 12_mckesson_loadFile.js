@@ -2,7 +2,7 @@ var fs = require('fs');
 
 var arr = [];
 
-var output = function runQuery(file) {
+function runQuery(file) {
   fs.readFile(file, 'utf8', function(err, data){
 
     if (err) {
