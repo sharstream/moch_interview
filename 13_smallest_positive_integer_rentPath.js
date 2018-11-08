@@ -43,4 +43,18 @@ function solution(a) {
     return a.length + 1;
 }
 
-console.log(solution(arr));
+// console.log(solution(arr));
+
+var A = 10;
+var B = "10"
+var C = (A === B)
+
+console.log(C);
+
+var year = new Date().getFullYear();
+
+var date = new Date(year, 2, 1);
+
+// var newDate= new Date(today.getCurrYear(), 3, 1)
+
+// console.log(date); // Tue 
