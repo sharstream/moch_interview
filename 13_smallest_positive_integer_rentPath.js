@@ -43,13 +43,13 @@ function solution(a) {
     return a.length + 1;
 }
 
-// console.log(solution(arr));
+console.log(solution(arr));
 
 var A = 10;
 var B = "10"
 var C = (A === B)
 
-console.log(C);
+// console.log(C);
 
 var year = new Date().getFullYear();
 
