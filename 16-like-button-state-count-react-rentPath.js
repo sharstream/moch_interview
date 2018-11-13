@@ -26,14 +26,7 @@ export default class App extends Component {
 
   render() {
     var className = this.state.clicked ? 'like-button' : 'like-button liked';
-
     var spanClass = classNames('likes-counter');
-
-    if(!this.state.clicked) {
-
-    } else {
-      
-    }
     return ( 
       <div>
         <div>
