@@ -5,28 +5,47 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 100
+      count: 100,
+      clicked: false
     }
   }
 
-  handleClick = () => {
-    this.setState(prevState => {
-      return { count: prevState.count + 1 }
-    })
+  incrementClick = () => {
+    this.setState({ 
+      count: this.state.count + 1,
+      clicked: true
+     });
+  }
+
+  undoClick = () => {
+    this.setState({ 
+      count: this.state.count - 1,
+      clicked: false
+    });
   }
 
   render() {
-
-    var btnClass = classNames('like-button liked');
+    var className = this.state.clicked ? 'like-button' : 'like-button liked';
 
     var spanClass = classNames('likes-counter');
 
+    if(!this.state.clicked) {
+
+    } else {
+      
+    }
     return ( 
       <div>
         <div>
-          <button className={btnClass} onClick={this.handleClick}>
-            <span className={spanClass}> Like | {this.state.count}</span>
-          </button>
+          {!this.state.clicked ? 
+            <button className={className} onClick={this.incrementClick}>
+              <span className={spanClass}> Like | {this.state.count}</span>
+            </button>
+          :
+            <button className={className} onClick={this.undoClick}>
+              <span className={spanClass}> Like | {this.state.count}</span>
+            </button>
+          }
           {/* <h2> Like Button </h2>  */}
         </div>
         <style>{`.like-button {
