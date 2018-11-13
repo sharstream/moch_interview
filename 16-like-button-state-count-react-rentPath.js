@@ -1,7 +1,7 @@
-import cx from 'classnames';
-import { Component } from 'react';
+import classNames from 'classnames';
+import React, { Component } from 'react';
 
-export default class LikeButton extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,23 +10,26 @@ export default class LikeButton extends Component {
   }
 
   handleClick = () => {
-  this.setState(prevState => {
+    this.setState(prevState => {
       return { count: prevState.count + 1 }
     })
   }
 
   render() {
+
+    var btnClass = classNames('like-button liked');
+
+    var spanClass = classNames('likes-counter');
+
     return ( 
       <div>
-        <div className="like-counter">
-      
+        <div>
+          <button className={btnClass} onClick={this.handleClick}>
+            <span className={spanClass}> Like | {this.state.count}</span>
+          </button>
+          {/* <h2> Like Button </h2>  */}
         </div>
-        <div className="like-button">
-          <input type = "button" onClick = {this.handleClick} value = `Like | ${this.state.count}` />
-          <h2> Like Button </h2> 
-        </div> 
-        <style > {
-          `.like-button {
+        <style>{`.like-button {
             font-size: 1rem;
             padding: 5px 10px;
             color:  #585858;
@@ -34,8 +37,8 @@ export default class LikeButton extends Component {
           .liked {
             font-weight: bold;
             color: #1565c0;
-          }`
-        } </style> 
+          }
+          `}</style> 
       </div>
     );
   }
