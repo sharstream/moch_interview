@@ -38,6 +38,7 @@ class FindFiles extends EventEmitter {
 const FindFileSearcher = new FindFiles('.js');
 
 // ImplementationFindFilesSearcher
+FindFilesSearcher
   .addFile('file1.js')
   .addFile('file2.md')
   .addFile('file3.js')
