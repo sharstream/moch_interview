@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="item item--1">Modern</div>
+  <div class="item item--2">CSS</div>
+  <div class="item item--3">with</div>
+  <div class="item item--4">Flexbox</div>
+  <div class="item item--5">and</div>
+  <div class="item item--6">Grid</div>
+  <div class="item item--7">is</div>
+  <div class="item item--8">great</div>
+</div>
+
+.container {
+  width: 1000px;
+  margin: 30px auto;
+  background-color: #ddd;
+  
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  grid-template-columns: max-content 1fr 1fr min-content;
+  
+  .item {
+    padding: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+    background-color: orangered;
+
+    &--1 { background-color: orangered; }
+    &--2 { background-color: yellowgreen; }
+    &--3 { background-color: blueviolet; }
+    &--4 { background-color: palevioletred; }
+    &--5 { background-color: royalblue; }
+    &--6 { background-color: goldenrod; }
+    &--7 { background-color: crimson; }
+    &--8 { background-color: darkgray; }
+  }
+}
