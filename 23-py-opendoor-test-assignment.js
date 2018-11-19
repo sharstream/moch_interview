@@ -12,11 +12,15 @@ const solution = (numbers) => {
   if(numbers.lenght === 0)
     return 0;
   else {
-    var largest = 0;
-    numbers.forEach(number => {
-      if(number > largest)
-        largest = number;
-    });
+    let largest = 0;
+    for(let i = 0; i < numbers.length; i++) {
+      if(numbers[i] > largest)
+      largest = numbers[i];
+    }
+    // numbers.forEach(number => {
+    //   if(number > largest)
+    //     largest = number;
+    // });
     return largest;
   }
 };
