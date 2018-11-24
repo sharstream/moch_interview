@@ -10,6 +10,7 @@ const largestPalindromeProduct = digit => {
   var start = Math.pow(10, digit - 1),
       end = Math.pow(10, digit);
 
+  // variable declarations
   var x, y, product, largest = 0,
   productX, productY;
   for (x = start; x < end; x++) {
