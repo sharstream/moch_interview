@@ -3,13 +3,7 @@
 
 const leastCommonMultiple = (min, max) => {
 
-  const range = (start, end) => {
-    // if (start === end) return [start];
-    //recursive case
-    // return [start, ...range(start + 1, end)];
-    // or using map technique
-    return (new Array(end - start + 1)).fill(undefined).map((_, i) => i + start);
-  }
+  const range = (start, end) => new Array(end - start + 1).fill(undefined).map((value, index) => index + start);
   // find the multiple without any remainder
   // divide a and b to get a remainder r
   // if r = 0, then b is the greatest common divisor
@@ -37,4 +31,4 @@ const leastCommonMultiple = (min, max) => {
 }
 var min = 1, max = 10;
 
-console.log(`smallest common multiple betwee ${min} and ${max} is: `, leastCommonMultiple(1, 10));
+console.log(`smallest common multiple betwee ${min} and ${max} is: `, leastCommonMultiple(min, max));
