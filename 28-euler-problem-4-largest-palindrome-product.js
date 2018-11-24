@@ -32,4 +32,4 @@ const largestPalindromeProduct = digit => {
 
 }
 
-console.log(`largest palindrom two 3-digit is: `, largestPalindromeProduct(3));
+console.log(`largest palindrome two 3-digit numbers is: `, largestPalindromeProduct(3));
