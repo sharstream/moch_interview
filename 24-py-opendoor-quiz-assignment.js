@@ -155,9 +155,9 @@ const sum1 = (a, b) => a + b
 const sum2 = a => b => a + b
 const incrementEach1 = (ar, by) => 
   ar.map(ensureNum)
-    .map(addNums(by))
-console.log(`adding curry: `, sumCurry(2)(3))
-// console.log(incrementEach([1, '2', 3], 4))
+    .map(addNums1(by))
+// console.log(`adding curry: `, sumCurry(2)(3))
+console.log(incrementEach1([1, '2', 3], 4))
 // console.log(foo);
 foo = 1
 // console.log(foo);
