@@ -23,7 +23,7 @@ const isPalindrome = s => {
 }
 
 var input = 'racecar'
-console.log(`is a palindrome: ` + isPalindrome(input));
+// console.log(`is a palindrome: ` + isPalindrome(input));
 
 // QUESTION 2
 // Given an array of numbers, find the kth largest number
@@ -57,7 +57,7 @@ function kthHighest(numbers, k) {
   return sorted[sorted.length - k];
 }
 
-console.log(largestNumber(nums, 3));
+// console.log(largestNumber(nums, 3));
 
 // QUESTION 3
 // In most text editor, when you select an open parenthesis, the editor
@@ -87,4 +87,79 @@ function findClosingBracketMatchIndex(parentesis, index) {
   return pos;
 }
 var position = 4;
-console.log(`counting...`, findClosingBracketMatchIndex('(*(*()**(())())**)', position));
+// console.log(`counting...`, findClosingBracketMatchIndex('(*(*()**(())())**)', position));
+/*-----------------------------------------*/
+// Arrow function workspace
+// declaration
+function addOne(foo) {
+  return foo + 1;
+}
+// expression
+var addOne = function(foo) {
+  return foo + 1;
+}
+// equivalent arrow funciton
+const addOne1 = foo => foo + 1;
+// arrow function with optional syntax added back in
+const foo1 = (bar) => {
+  return bar + 1;
+}
+// dealing with complexity
+const addOneToEach = ar => ar.map(num => num + 1)
+const addOneToEachMore = ar => 
+  ar.map(entity => {
+    if (typeof entity === 'string') {
+      return parseInt(entity) + 1;
+    }
+    return entity + 1;
+  })
+const addOneToEachMoreComplex = ar => 
+  ar.map(entity => typeof entity === 'string'
+    ? parseInt(entity) + 1
+    : entity + 1
+  )
+const ensureNum = entity => 
+  typeof entity === 'string' ? parseInt(entity) : entity
+
+const addOne2 = num => num + 1
+const addOneToEachAnother = ar => 
+  ar.map(ensureNum)
+    .map(addOne)
+// anonymous function callback
+function addOneToEachAnonymous(ar) {
+  return ar.map(function(num) {
+    return num + 1;
+  })
+}
+// anonymous callback with arrow functions
+const addOneToEach1 = ar => ar.map(num => num + 1)
+// named function applied by anonymous callback arrow function
+const addOne3 = num => num + 1
+const addOneToEach2 = ar => ar.map(num => addOne3(num))
+// named function callback
+const addOne4 = num => num + 1
+const addOneToEach3 = ar => ar.map(addOne4)
+// incremental by a number
+const addNums = (a, b) => a + b
+const incrementEach = (ar, by) => 
+  ar.map(ensureNum)
+    .map(num => addNums(num, by))
+// adding the curry
+const sum = function(a, b) {
+  return a + b
+}
+const addNums1 = a => b => a + b
+// no curry
+const sum1 = (a, b) => a + b
+// with curry
+const sum2 = a => b => a + b
+const incrementEach1 = (ar, by) => 
+  ar.map(ensureNum)
+    .map(addNums(by))
+console.log(`adding curry: `, sumCurry(2)(3))
+// console.log(incrementEach([1, '2', 3], 4))
+// console.log(foo);
+foo = 1
+// console.log(foo);
+var foo
+// console.log(addOne(1));
