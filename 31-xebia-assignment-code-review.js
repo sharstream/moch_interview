@@ -9,7 +9,7 @@ const addKeys = () => {
       name: 'Mayank'
     }
   ]
-  // //adding new property name
+  //adding new property name
 
   const addName = name => {
     return name
@@ -21,7 +21,7 @@ const addKeys = () => {
   })
 
   employee.forEach(element => {
-    console.log(`{ \n id: ${element.id}, \n name: ${element.name}, \n displayName: ${element.displayName} \n}`);
+    console.log(`{ \n id: ${element.id}, \n name: ${element.name.toString()}, \n displayName: ${element.displayName.toString()} \n}`);
   })
 }
 
