@@ -33,3 +33,20 @@ var TodoApp = React.createClass({
   }
 });
 React.renderComponent(TodoApp(null), mountNode);
+
+// Link Click and count goes down
+var Clicker = React.createClass({
+  getInitialState: function() {
+    return {count: 0};
+  },
+  handleClick: function() {
+    this.setState({count: this.state.count + 1});
+  },
+  render: function() {
+    return React.DOM.a(
+      {onClick: this.handleClick},
+      'You have clicked ' + this.state.clount + ' times'
+    );
+  }
+});
+React.renderComponent(Clicker(), mountNode);
