@@ -40,9 +40,12 @@ console.log(person.constructor);
 console.log(`person prototype: ${person.__proto__}`);
 console.log(`object prototype: ${Object.prototype}`);
 // Working with Prototype Inheratance Object based-language in Javascript
+var idCounter = 1;
+
 function Employee(name, dept) {
   // this.name = name || ''; // note that this.name (a local variable) does not appear here
   this.dept = dept || "general";
+  if (name) this.id = idCounter++;
 }
 Employee.prototype.name = ""; // A single copy
 /*if you want to have default values for object properties and you want to be able to change the default values at run time, you should set the properties in the constructor's prototype, not in the constructor function itself.*/
@@ -71,10 +74,18 @@ function SalesPerson() {
 SalesPerson.prototype = Object.create(WorkerBee.prototype);
 SalesPerson.prototype.constructor = SalesPerson;
 
-function Engineer(name, projs, mach) {
-  this.base = WorkerBee;
+// Illusion of multiple inheritance
+function Hobbyist(hobby) {
+  this.hobby = hobby || 'scuba';
+}
+
+function Engineer(name, projs, mach, hobby) {
+  this.base1 = WorkerBee;
+  this.base1(name, 'engineering', projs);
+  this.base2 = Hobbyist;
+  this.base2(hobby);
   // this.base(name, 'engineering', projs);
-  WorkerBee.call(this, name, "engineering", projs);
+  // WorkerBee.call(this, name, "engineering", projs);
   this.machine = mach || "";
 }
 //lookup in the prototype chain
@@ -131,3 +142,7 @@ function instanceOf(object, constructor) {
   }
   return false;
 }
+
+var dennis = new Engineer('Doe, Dennis', ['collabra'], 'hugo');
+// doesn't inherit this new property
+Hobbyist.prototype.equipment = ['mask', 'fins', 'regulator', 'bcd'];
