@@ -14,7 +14,7 @@ function solution(N, givenNumber) {
   for (var i = 0; i < N.length; i++) {
     if ( N[i] < givenNumber) {
       smallestNumber = N[i];
-      result.push(N[i]);
+      result.push(smallestNumber);
     }
   }
   return result;
